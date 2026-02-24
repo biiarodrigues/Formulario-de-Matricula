@@ -1,0 +1,37 @@
+#app {
+  display: grid;
+  grid-template-columns: 51.25% 48.75%; 
+   /*
+   656(largura da main=656)x100(número fixo)/1280(dividido por 1280 que é a largura da página), vai descobrir quanto é para colocar no primeiro lado e diminui por 100 para encontrar do 2º. */
+
+   height: 100vh;
+   
+   /* (o que view port? é toda essa parte visível, 100 significa que é dessa parte de cima até a de baixo, 100 pedacinhos dela=tudo que tem aqui) */
+
+   overflow: hidden;
+}
+
+main {
+  height: 100%;
+  overflow: auto;
+  padding: 4rem;
+}
+
+main .main-container {
+  max-width: 33rem;
+  margin-left: auto;
+}
+
+aside {
+  background-color: var(--surface-secondary);
+  padding: 4rem;
+  height: 100%; /* Ocupa os 100vh do pai */
+  overflow: hidden; /* Garante que o aside nunca role */
+}
+
+ aside .aside-container {
+   max-width: 31rem;
+}
+
+
+/* É NECESSÁRIO UM LIMITE DE LARGURA PARA O TEXTO CONFORME FOR DIMINUINDO O TAMANHO DA TELA, NÃO FICAR MUITO ESTICADO, NESSE CASO O LIMITE DE LARGURA DO PRIMEIRO LADO É DE 528 E O DO 2º É DE 496, PRECISA CONVERTER OS DOIS PARA REM. */

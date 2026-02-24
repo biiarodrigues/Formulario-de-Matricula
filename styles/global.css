@@ -1,5 +1,19 @@
-/* Unidade de medida para fonte, chamada rem, */
+/* Unidade de medida para fonte, chamada rem.
+No navegador o padrão é o font-size ter 16px, mas pq não mexemos nesse font-size? pois se você colocar 100%, vai ser 100% de que? Nos navegadores existe uma opção dentro de settings que é a configuração de fonte dele, que é para acessibilidade e lá essa pessoa consegue aumentar o font-size dela, porém se estiver definido o font-size: 16px dentro da variável root, esse local não vai aumentar os 100%, vai ficar em 16px. 
+Por conta disso utilizamos a unidade de medida rem. 
+EM= Imagina que tinha umas prensas antigas que faziam os livros e o M era uma unidade de medida para as letras/caracteres, por isso em.
+R=root
+EXISTE A UNIDADE DE MEDIDA SOMENTE EM, MAS O EM SEMPRE VAI BUSCAR DO PAI DE ONDE ELE ESTEJA A REFERÊNCIA, SE TEM UM P DENTRO DE UMA DIV E ESSA DIV TIVESSE 32PX DE FONT-SIZE, 1EM=32PX. ENtão se fosse 1rem, iria pular os 32px da div e iria procurar na root element o que de fato significa o em, e esse é o do navegador, o que a pessoa definiu no navegador.
+1rem por padrão equivale a 16px, que é o que vem no navegador.
+A unidade de medida REM consegue ser usada em tudo que for necessário, então sempre que pegar algum tipo de valor, ex:
+14px dividido sempre por 16px, sempre divide por 16 o pixel e coloca essa medida de rem. Então nesse caso do font-size, se colocar 100% ou 1rem vai significar a mesma coisa.
+*/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --font-family: 'Poppins', sans-serif;
@@ -19,4 +33,8 @@
   --stroke-highlight: #F3541C;
 
   --semantic-error: #DC2626;
+}
+
+body {
+  overflow: hidden;
 }
